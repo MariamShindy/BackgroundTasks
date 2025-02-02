@@ -1,10 +1,5 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BackgrounsTaskTest
 {
@@ -16,7 +11,9 @@ namespace BackgrounsTaskTest
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Timed Background Service is working. Time: {time}", DateTimeOffset.Now);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Timed Background Service is working. Time: {DateTimeOffset.Now}");
+                Console.ResetColor();
                 await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
             }
 

@@ -23,6 +23,8 @@ namespace BackgrounsTaskTest
                            {
                                services.AddHostedService<TimedHostedService>();
                                services.AddHostedService<TimedBackgroundService>();
+                               services.AddHostedService<SimpleTaskService>();
+                               services.AddHostedService<WorkerService>();
                            })
                            .ConfigureLogging(logging =>
                            {

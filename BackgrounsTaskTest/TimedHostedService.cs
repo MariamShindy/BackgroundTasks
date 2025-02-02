@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace BackgrounsTaskTest
@@ -21,7 +16,9 @@ namespace BackgrounsTaskTest
 
         private void DoWork(object state)
         {
-            _logger.LogInformation($"Timed Hosted Service is working. Time: {DateTimeOffset.Now}");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"Timed Hosted Service is working. Time: {DateTimeOffset.Now}");
+            Console.ResetColor();
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
